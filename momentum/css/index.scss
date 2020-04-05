@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap');
+
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container{
+  .row{
+    .col-md-12{
+      .form, .greetings{
+        display: none;
+      }
+      .showing{
+        display: block;
+      }
+    }
+  }
+}
