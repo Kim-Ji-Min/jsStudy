@@ -1,10 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap");
+@font-face {
+  font-family: 'S-CoreDream-4Regular';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'S-CoreDream-8Heavy';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 ::selection {
   background-color: #fcc;
   color: #fff; }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'S-CoreDream-4Regular', sans-serif;
   overflow: hidden;
   background-color: #fcc; }
   body ul, body li {
@@ -15,9 +24,10 @@ body {
   height: 100vh; }
   .container-fluid .row .col-md-12 h1 {
     margin-top: 8rem;
+    font-family: 'S-CoreDream-8Heavy';
     font-size: 6rem;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     transition: all 0.3s; }
   .container-fluid .row .col-md-12 .form, .container-fluid .row .col-md-12 .greetings {
     display: none; }
