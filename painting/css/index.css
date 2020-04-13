@@ -1,6 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap");
+@font-face {
+  font-family: 'Recipekorea';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 body {
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: 'Recipekorea', serif;
   background-color: #ededed; }
   body ul, body li {
     list-style: none; }
