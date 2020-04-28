@@ -14,11 +14,12 @@ body {
   letter-spacing: 2px; }
 .container .row .col-md-12 canvas {
   width: 600px;
-  height: 500px;
+  height: 600px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1); }
 .container .row .col-md-12.controls .controls__btns {
   justify-content: center; }
   .container .row .col-md-12.controls .controls__btns button {
+    padding-top: 0.6rem;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1); }
     .container .row .col-md-12.controls .controls__btns button:active {
       transform: scale(0.98); }

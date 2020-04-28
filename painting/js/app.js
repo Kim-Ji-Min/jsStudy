@@ -1,12 +1,21 @@
 //var
+const CANVAS_SIZE = 600;
+const INITIAL_COLOR = '#2c2c2c';
 const canvas = document.getElementById('jsCanvas');
-canvas.width = 600;
-canvas.height = 500;
+      canvas.width = CANVAS_SIZE;
+      canvas.height = CANVAS_SIZE;
 const ctx = canvas.getContext('2d');
-ctx.strokeStyle = '#2c2c2c';
-ctx.lineWidth = 2.5;
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0,0, CANVAS_SIZE, CANVAS_SIZE);
+      ctx.strokeStyle = INITIAL_COLOR;
+      ctx.fillStyle = INITIAL_COLOR;
+      ctx.lineWidth = 2.5;
+const colors = document.getElementsByClassName('jsColors');
+const range = document.getElementById('jsRange');
+const mode = document.getElementById('jsMode');
 
 let painting = false;
+let filling = false;
 
 //function
 function stopPainting() {
@@ -31,8 +40,32 @@ function onMouseMove(event) {
     }
 }
 
-function onMouseDown(event) {
-    painting = true;
+function handleColorClick(event) {
+    const color = event.target.style.backgroundColor;
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+}
+
+function handleRangeChange(event) {
+    const size = event.target.value;
+    ctx.lineWidth = size;
+}
+
+function handleModeClick() {
+    if(filling === true){
+        filling = false;
+        mode.innerText = 'Fill';
+    }else{
+        filling = true;
+        mode.innerText = 'Paint';
+    }
+}
+
+function handleCanvasClick() {
+    if (filling){
+        //canvas.width = canvas.height = CANVAS_SIZE = 700
+        ctx.fillRect(0,0, canvas.width, canvas.height);
+    }
 }
 
 if (canvas){
@@ -40,4 +73,15 @@ if (canvas){
     canvas.addEventListener('mousedown', startPainting);
     canvas.addEventListener('mouseup', stopPainting);
     canvas.addEventListener('mouseleave', stopPainting);
+    canvas.addEventListener('click', handleCanvasClick);
+}
+
+Array.from(colors).forEach(color => color.addEventListener('click', handleColorClick));
+
+if (range){
+    range.addEventListener('input', handleRangeChange);
+}
+
+if (mode){
+    mode.addEventListener('click', handleModeClick);
 }
